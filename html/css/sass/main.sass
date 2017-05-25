@@ -1,0 +1,662 @@
+@import "bourbon/bourbon"
+
+$text_color: #333
+$dark_color: #000
+$red_color: #9B1818
+$blue_color: #003469
+$green_color: #67bc5c
+$main_color: #fff
+$golden_brown_color: #A79871
+$brown_color: #D7B390
+$brown_color_example: #D7B390
+@mixin kerning($kerning)
+	letter-spacing: $kerning + px
+
+body
+	font-family: "AmsdamRegular", sans-serif
+	font-weight: normal
+	font-size: 14px
+	min-width: 320px
+	position: relative
+	line-height: 1.6
+	-webkit-font-smoothing: antialised
+
+.hidden
+	display: none
+
+section,
+.main_head
+	position: relative
+	min-height: 480px
+.tarifs
+	min-height: 1080px
+
+.head_section
+	position: relative
+	min-height: 480px
+
+
+.light_section
+	background-color: #F4F2EE
+	strong
+		color: $brown_color	
+	.section_content
+		p
+			font-size: 17px
+.content_wrapper
+	display: table
+	width: 100%
+	height: 100%
+	position: absolute
+	top: 0
+	left: 0
+	z-index: 10
+	.content_descr
+		display: table-row
+		.content_centered
+			display: table-cell
+			text-align: center
+			vertical-align: middle
+
+
+
+.dark_section
+	position: relative
+	z-index: 1
+	color: #fff
+	p
+		color: #fff
+		font-size: 17px
+	strong
+		color: $brown_color	
+	span
+		color: #fff
+		font-size: 17px
+	label
+		color: $brown_color
+		font-family: "CleanvertisingLight", sans-serif
+		font-size: 18px
+	input,
+	textarea
+		color: #fff
+	
+
+.example_section
+	
+	box-shadow: inset rgba(0,0,0,0.8) 0 0 0 1080px
+	z-index: 1
+	color: #fff
+	span
+		color: #fff
+		font-size: 16px
+	label
+		color: goldenrod
+		font-family: "CleanvertisingLight", sans-serif
+		font-size: 18px
+	input,
+	textarea
+		color: #fff	
+
+
+.main_footer
+	min-height: 150px
+	background-color: #fff
+	position: relative 
+
+.loader
+	background: none repeat scroll 0 0 #fff
+	bottom: 0
+	height: 100%
+	left: 0
+	position: fixed
+	right: 0
+	top: 0
+	width: 100%
+	z-index: 9999
+	.loader_inner
+		background-image: url("../img/preloader.gif")
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: center center
+		background-color: #fff
+		height: 60px
+		width: 60px
+		margin-top: -30px
+		margin-left: -30px
+		left: 50%
+		top: 50%
+		position: absolute
+
+.toggle_mnu
+	background-color: $brown_color
+	width: 50px
+	height: 50px
+	position: fixed
+	z-index: 50
+	border: none
+	right: 20px
+	top: 20px
+	border-radius: 5px
+	span
+		display: block
+
+$w: 28px
+$h: 3px
+
+.sandwich 
+	width: $w
+	height: $w
+	position: absolute
+	top: 8px
+	bottom: 0
+	left: 0
+	right: 0
+	margin: auto
+	z-index: 200
+
+.sw-topper
+	position: relative
+	top: 0
+	width: $w 
+	height: $h
+	background: #fff
+	border: none
+	border-radius: 4px 4px 4px 4px
+	transition: transform 0.5s, top 0.2s
+	display: block
+
+
+.sw-bottom
+	position: relative
+	width: $w
+	height: $h
+	top: $h * 2.2
+	background: #fff
+	border: none
+	border-radius: 4px 4px 4px 4px
+	transition: transform 0.5s, top 0.2s
+	transition-delay: 0.2s, 0s
+.sw-footer
+	position: relative
+	width: $w
+	height: $h
+	top: $h * 4.5
+	background: #fff
+	border: none
+	border-radius: 4px 4px 4px 4px
+	transition: all 0.5s
+	transition-delay: 0.1s
+.sandwich.active
+	.sw-topper
+		top: 9px
+		transform: rotate(-45deg)
+	.sw-bottom
+		top: 6px
+		transform: rotate(45deg)
+	.sw-footer
+		opacity: 0
+		top: 0
+		transform: rotate(180deg)
+
+
+.top_mnu
+	a:hover
+		color: #000
+		font-size: 15px
+		text-decoretion: none
+	a
+		+kerning(4)
+
+
+
+.top_mnu
+	position: fixed
+	width: 25%
+	height: 100%
+	background-color: $brown_color
+	z-index: 20
+	right: 0
+	top: 0
+	display: none
+	a
+		font-weight: 500
+		color: #000
+		display: block
+		text-transform: uppercase
+		font-size: 14px
+		opacity: .9
+		position: relative
+		height: 60px
+		text-decoration: none
+	ul,
+	li
+		list-style-type: none
+		padding: 0
+		margin: 0
+	ul
+		margin-top: 280px
+		text-align: center
+		+animation-duration(.01s)
+		li
+			&:nth-child(1) a
+				+animation-delay(0)
+			&:nth-child(2) a
+				+animation-delay(.1s)
+			&:nth-child(3) a
+				+animation-delay(.2s)
+			&:nth-child(4) a
+				+animation-delay(.3s)
+			&:nth-child(5) a
+				+animation-delay(.4s)	
+			span
+				display: block
+				position: relative
+				top: -40px
+				left: 0
+				height: 100%
+				+transition(all 0.5s ease)
+				&:hover
+					background-color: rgba(0,0,0,0.1)
+
+
+
+.top_wrapper
+	
+	display: table
+	width: 100%
+	height: 100%
+	position: absolute
+	top: 0
+	left: 0
+	z-index: 10
+	.top_descr
+		display: table-row
+		.top_centered
+			display: table-cell
+			text-align: center
+			vertical-align: middle
+	.top_text
+		display: inline-block
+		+transition(all 1s ease)
+		p
+			margin: 0
+			text-transform: uppercase
+			+animation-delay(1s)
+			font-size: 1.6em
+			color: $brown_color
+			font-family: "CleanvertisingLight", sans-serif
+		h1
+			display: inline-block
+			padding: 10px 35px
+			color: $brown_color
+			text-transform: uppercase
+			font-weight: bold
+			font-size: 2.8em
+			margin-left: 20px
+			margin-right: 20px
+			+animation-delay(.7s)
+			background-color: rgba(255,255,255,0)
+			font-family: "AmsdamRegular", sans-serif
+
+.section_header
+	z-index: 20
+	text-align: center
+	text-transform: uppercase
+	font-size: 2.4em
+	padding-top: 100px
+	padding-bottom: 40px
+	color: $brown_color
+	font-family: "CleanvertisingLight", sans-serif
+	+animation-delay(.3s)
+
+
+.section_header_black
+	z-index: 20
+	text-align: center
+	text-transform: uppercase
+	font-size: 2.4em
+	padding-top: 100px
+	padding-bottom: 40px
+	color: black
+	font-family: "CleanvertisingLight", sans-serif
+	+animation-delay(.3s)
+
+
+
+.header_wrapper
+	background-color: #F4F2EE
+	position: fixed
+.section_header_fixed
+	position: fixed
+
+.section_content
+	position: absolute
+	z-index: 10
+	p
+		font-size: 14px
+	+animation-delay(.5s)
+
+.icon_item_left
+	color: $brown_color
+	i
+		font-size: 55px
+		line-height: 110px
+		margin-left: 82px
+		margin-top: -10px
+.icon_item_left_small
+	color: $brown_color
+	i
+		font-size: 55px
+		line-height: 110px
+		
+		margin-top: -10px
+	+animation-delay(.3s)
+.icon_item_cred
+	color: $brown_color
+	i
+		font-size: 35px
+.icon_item_contacts
+	color: $brown_color
+	i
+		font-size: 40px
+		margin-left: 5px		
+		
+
+.icon_item_center_3
+	color: $brown_color
+	margin-bottom: 40px
+	i
+		font-size: 100px
+		line-height: 110px
+		margin-left: 130px
+		   
+
+.icon_item_center_3 i:hover
+	color: black
+	cursor: pointer
+	+transition(all 0.4s ease)
+
+
+
+.icon_item_left_small i:hover
+	color: black
+	cursor: pointer
+	+transition(all 0.4s ease)
+
+
+.icon_item_center
+	color: $brown_color
+	i
+		font-size: 100px
+		line-height: 110px
+		margin-left: 82px
+
+.icon_container_bottom,
+.icon_container_top
+	padding-top: 80px
+
+.icon_descr_left
+	padding-top: 10px
+	text-align: left
+	color: #000
+	+animation-delay(.3s) 
+	font-size: 17px
+.icon_descr_center
+	padding-top: 20px
+	text-align: center
+	color: #000
+	span
+		font-size: 17px
+	
+.icon_text_left
+	height: 70px
+	margin-top: 30px
+	p
+		font-size: 14px
+		+animation-delay(.5s)
+.icon_text_right
+	height: 70px
+	margin-top: 30px
+	p
+		font-size: 14px
+		+animation-delay(.5s)
+.price_container
+	.left .resume_description strong
+		margin-left: 10px
+	.right .resume_description strong
+		margin-right: 10px
+	.left
+		text-align: right
+		h3
+			text-align: right
+		.resume_item
+			+animation-delay(.5s)
+	.right
+		text-align: left
+		h3
+			text-align: left
+		.resume_item
+			+animation-delay(.5s)
+	h3
+		margin-top: 30px
+		font-size: 18px
+		font-family: "CleanvertisingLight", sans-serif
+		padding-bottom: 35px
+
+	.year
+		font-weight: 600
+		font-style: italic
+		display: inline-block
+		padding: 0 15px
+		margin-bottom: 15px
+	strong
+		font-weight: 600
+		font-style: normal
+		text-transform: uppercase
+	.resume_description
+		font-style: italic
+	.resume_item
+		margin-bottom: 40px
+		p
+			margin-top: 10px
+			height: 50px
+	+animation-delay(.5s)
+		
+.sub_header
+	text-align: center
+	font-weight: bold
+	font-size: 22px
+	margin-top: 90px
+	margin-bottom: 40px
+	font-family: "CleanvertisingLight", sans-serif
+	color: $brown_color
+.romb
+	width: 5%
+	height: 5%
+
+.modal-box-content
+	position: relative
+
+.contact_box
+	margin-bottom: 20px
+	color: #000
+	h3
+		text-align: left
+		color: #fff
+		margin-bottom: 0px
+		margin-top: 0px
+		font-size: 22px
+		font-family: "CleanvertisingLight", sans-serif
+		font-weight: 400
+	.contacts_icon
+		font-size: 30px
+	p
+		margin-top: 5px
+		color: $brown_color
+	a
+		color: $brown_color
+
+.main_button
+	text-align: center
+	button
+		border: 1px solid $brown_color
+		color: $brown_color
+		line-height: 40px
+		padding: 0 25px
+		font-size: 16px
+		text-transform: uppercase
+		font-weight: 400
+		margin-top: 10px
+		float: none
+		background-color: transparent
+		+transition(all 0.7s ease)
+	button:hover
+		background-color: $brown_color
+		color: #000
+		+transition(all 0.7s ease)
+
+
+
+.main_form
+	button
+		border: none
+		color: #fff
+		line-height: 40px
+		padding: 0 25px
+		font-size: 16px
+		text-transform: uppercase
+		font-weight: 400
+		margin-top: 10px
+		float: right
+		background-color: $brown_color
+
+.form-group
+	display: block
+	margin-bottom: 40px
+	.color_element
+		font-weight: 700
+		font-size: 18px
+	.text-danger
+		font-size: 11px
+		margin-top: 5px
+		display: block
+		ul,
+		li
+			margin: 0
+			padding: 0
+			list-style-type: none
+	input,
+	textarea
+		display: block
+		width: 100%
+		border: none
+		border-bottom: 1px solid $brown_color
+		margin-top: 5px
+		line-height: 25px
+		text-indent: 10px
+		font-size: 14px
+		background-color: transparent
+		overflow: hidden
+.contacts_descr
+	margin-top: 100px
+	.icon_item_center
+		font-size: 40px
+	h3
+		text-align: center
+		color: #fff
+		margin-bottom: 0px
+		margin-top: 0px
+		font-size: 22px
+		font-family: "CleanvertisingLight", sans-serif
+		font-weight: 400
+	p
+		margin-top: 5px
+		color: $brown_color
+		text-align: center
+	a
+		color: $brown_color
+		text-align: center
+.message_wrapper
+	text-align: center
+.sub_head
+	color: $brown_color
+	font-size: 20px
+	font-family: "ClearvertisingLight", sans-serif
+
+.me_header
+	text-align: center
+	font-weight: bold
+	font-size: 22px
+	margin-top: 10px
+	margin-bottom: 20px
+	font-family: "CleanvertisingLight", sans-serif
+	color: #fff
+
+
+
+.text_me
+	p
+		padding-top: 10px
+		text-align: left
+		color: #fff
+		font-size: 20px	
+		font-family: "CleanvertisingLight", sans-serif
+	
+
+.me_button
+	text-align: center
+	a
+		text-decoration: none	
+		border: 1px solid $brown_color
+		color: $brown_color
+		line-height: 40px
+		padding: 10px 30px
+		font-size: 16px
+		text-transform: uppercase
+		font-weight: 400
+		margin-top: 5px
+		margin-bottom: 20px
+		 
+		background-color: transparent
+		+transition(all 0.7s ease)
+
+	a:hover
+		background-color: $brown_color
+		color: #fff
+		+transition(all 0.7s ease)	
+
+.sertificate
+	padding: 0
+	img
+		width: 100%
+	.sert_cont
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%	
+		background-color: rgba(0,0,0,.8)
+		text-align: center
+		padding-top: 70%
+		opacity: 0
+		transition: all 0.5s
+	&:hover .sert_cont
+		opacity: 1	
+		padding-top: 50%
+	a
+		background-color: transparent
+		border: #fff 1px solid
+		padding: 2px 10px
+		display: inline-block
+		text-decoration: none
+		border-color: $brown_color
+		color: $brown_color
+
+.sert_descr
+	background-color: #fff
+	max-width: 600px
+	margin: auto
+	img
+		width: 100%
+.zoom_class
+	+animation-delay(0.7s)
